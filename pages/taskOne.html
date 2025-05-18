@@ -13,10 +13,19 @@
         <h1>Корбань Андрей ПИ - 231</h1>
     </header>
 
+    <div class="search-container">
+        <div class="search-wrapper">
+            <form>
+                <input type="text" name="focus" required class="search-box" placeholder="Поиск" />
+                <button class="close-icon" type="reset"></button>
+            </form>
+        </div>
+    </div>
+
     <div class="container">
         <div class="container_left">
             <h2>Состояние БД</h2>
-            <table id="raspisaniye">
+            <table id="articles" class="articles">
                 <thead>
                     <tr>
                         <th>Название</th>
@@ -31,8 +40,16 @@
         </div>
         
         <div class="container_right">
-            <button class="btn_zad2" type="button">Задание 2</button>
+            <h1> </h1>
+            <button id="btn_listArticles" class="btn_listArticles" type="button">Cписок статей</button>
             <button id="btn_add" class="btn_add" type="button">Добавить записи</button>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Авторы</button>
+                <div id="authorDropdown" class="dropdown-content">
+                </div>        
+            </div>
+
         </div>
     
     </div>

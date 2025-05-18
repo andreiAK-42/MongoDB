@@ -11,20 +11,18 @@ function startMongoDataBase() {
     });  
 }
 
-function getData() {
+async function getData() {
     try {
         const db = mongoClient.db("Lab2DB");
         const collection = db.collection("articles");
-        const results = collection.find().toArray();
+        const results = await collection.find().toArray();
         return results;
 
     } catch (err) {
         console.log(err);
-    } finally {
         return [];
     }
 }
-
 
 async function setData(filePath) {
     try {
