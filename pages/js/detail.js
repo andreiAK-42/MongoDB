@@ -18,7 +18,6 @@ function getReviews() {
         })
         .then(data => {      
             const targetClass = document.querySelector('.review_container');
-            console.log(data)
             
             data.reviews.forEach(element => {
                 const htmlContent = `

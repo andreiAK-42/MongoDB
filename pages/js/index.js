@@ -200,6 +200,46 @@ function dateSearch() {
         }
 }
 
+function getMiddleScore(item) {
+    var middleScore = 0;
+    var counterI = 0;
+    item.reviews.forEach(review => {
+        middleScore += review.score;
+        counterI += 1;
+    });
+
+    return Math.ceil(middleScore / counterI);
+}
+
+function renderTopArticles(data) {
+    const targetClass = document.querySelector('.top_articles_table');
+    if (Array.isArray(data)) {
+
+        data.sort(function (a, b) {
+
+            avgScoreA = getMiddleScore(a);
+            avgScoreB = getMiddleScore(b);
+            
+            if (avgScoreA !== avgScoreB) {
+                return avgScoreB - avgScoreA; 
+            }
+            return a.reviews.length - b.reviews.length;
+        });
+
+        data.forEach(item => {
+            const htmlContent = `
+            <div id="${item._id}" class="top_article">
+                <p>${item.name}</p>
+                <p>${item.reviews.length}</p>
+                <p>${getMiddleScore(item)}</p>
+            </div>`;
+
+            targetClass.innerHTML += htmlContent;
+
+        });
+    }
+}
+
 
 function renderTable(data) {
     const tableBody = document.querySelector('#articles tbody');
@@ -247,6 +287,7 @@ function renderTable(data) {
             tableBody.appendChild(tr);
         });
         document.getElementById("container_left").style.display = "";
+        renderTopArticles(data);
     } else {
         alert('JSON-файл должен содержать массив объектов.');
     }
