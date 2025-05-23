@@ -1,0 +1,87 @@
+.article_text {
+    border-color: white;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+p {
+    color: white;
+}
+
+.article_text_container {
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    border-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.header_container {
+    width: 100%;
+    display: flex;
+}
+
+
+.header_container_middle {
+    background-color: transparent;
+    position: relative;
+    height: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex: 1;
+    justify-content: center;    
+}
+
+.header_container_middle input {
+    width: 50%;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 26px;
+}
+
+
+.article_text_container textarea {
+    width: 100%;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 26px;
+    max-width: 100%;
+}
+
+.buttonMenu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+
+.buttonMenuContainer {
+    margin-top: 10px;
+    width: 50%;
+    justify-content: center;
+    display: flex;
+}
+
+.buttonMenuContainer button {
+    background-color: #3498DB;
+    border-radius: 10px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.buttonMenuContainer button:hover,
+.buttonMenuContainer button:focus {
+    background-color: #2980B9;
+}
+

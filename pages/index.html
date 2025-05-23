@@ -23,7 +23,7 @@
     </div>
 
     <div class="container">
-        <div class="container_left">
+        <div id="container_left" class="container_left">
             <h2>Состояние БД</h2>
             <table id="articles" class="articles">
                 <thead>
@@ -32,6 +32,7 @@
                         <th>Авторы</th>
                         <th>Дата размещения</th>
                         <th>Содержание статьи</th>
+                        <th>Действия</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,14 +41,24 @@
         </div>
         
         <div class="container_right">
+            
             <h1> </h1>
             <button id="btn_listArticles" class="btn_listArticles" type="button">Cписок статей</button>
             <button id="btn_add" class="btn_add" type="button">Добавить записи</button>
+            <button onclick="addNewArticle()" class="btn_add" type="button">Добавить новую запись</button>
 
             <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">Авторы</button>
+                <button onclick="articleListReset()" class="dropbtn">⟲</button>
                 <div id="authorDropdown" class="dropdown-content">
                 </div>        
+            </div>
+
+            <div class="searchDateContainer">
+                <input id="dateStart" type='text' name='head' required placeholder="Начало">
+                <p>-</p>
+                <input id="dateEnd" type='text' name='head' required placeholder="Конец">
+                <button onclick="dateSearch()" id="btn_searchDate" class="btn_add" type="button">🔍</button>
             </div>
 
         </div>

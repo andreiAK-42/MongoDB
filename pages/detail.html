@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header_container">
+            <div class="header_container_left">
+                <h1>Средняя оценка: {score} </h1>
+            </div>
+            
+            <div class="header_container_middle">
+                <h1>{name}</h1>
+            </div>
+
+            <div class="header_container_right">
+                <h1>Рецензий: {reviews_count}</h1>
+            </div>
+            
+        </div>
+    </header>
+
+
+    <div class="article_text">
+        <div class="article_text_container">
+            <p>{content}</p>
+        </div>
+    </div>
+
+
+    <div class="review_container">
+    </div>
+
+    <p class="_id">{_id}</p>
+    
+    <footer>
+        <p>©Авторские права никому не принадлежат, 1815. Все права украдены.</p>
+    </footer>
+
+    <script src="js/detail.js"></script>
+</body>
+
+</html>

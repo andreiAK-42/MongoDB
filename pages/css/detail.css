@@ -1,0 +1,91 @@
+.article_text {
+    border-color: white;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+p {
+    color: white;
+}
+
+.article_text_container {
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    border-color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.header_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_container_right,
+.header_container_left {
+    flex: 1;
+}
+
+.header_container_middle {
+    flex: 2;
+}
+
+.review_container {
+    margin-top: 10px;
+    min-height: 120px;
+    border: 1px solid #add;
+    display: flex;
+    overflow-x: auto;
+}
+
+.review_container::-webkit-scrollbar {
+    width: 20;
+    background-color: #1A1A1D;
+    color: aqua;
+}
+
+.review_container::-webkit-scrollbar-thumb {
+    width: 20;
+    background-color: greenyellow;
+    color: aqua;
+    border-radius: 20px;
+}
+
+.review {
+    min-width: 110px;
+    width: auto;
+    max-width: 180px;
+    height: auto;
+    background-color: #E50F0F;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.reviwer_name p {
+    color: white;
+    text-align: center;
+    height: 20px;
+    font-size: 20px;
+}
+
+.reviwer_score p {
+    color: white;
+    height: 20px;
+    text-align: center;
+}
+
+.reviwer_text p {
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+

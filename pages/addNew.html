@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/addNew.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header_container">
+            <div class="header_container_middle">
+                <input id="articleHeader" type='text' name='head' required placeholder="Введите заголовок статьи">
+            </div>
+        </div>
+    </header>
+
+
+    <div class="article_text">
+        <div class="article_text_container">
+            <textarea id="articleContent" name="content" required placeholder="Введите текст статьи"></textarea>
+        </div>
+    </div>
+
+    <div class="buttonMenu">
+        <div class="buttonMenuContainer">
+            <button onclick="back()" class="btnBack">Назад</button>
+            <button onclick="addNewArticle()" class="btnSave">Сохранить</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>©Авторские права никому не принадлежат, 1815. Все права украдены.</p>
+    </footer>
+
+    <script src="js/addNew.js"></script>
+</body>
+
+</html>
