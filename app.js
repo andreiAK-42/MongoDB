@@ -24,14 +24,18 @@ app.get("/detail", async (request, response) => {
 
             var middleScore = 0;
             var counterI = 0;
-            article.reviews.forEach(review => {
-                middleScore += review.score;
-                counterI += 1;
-            });
+            
 
+            if (Array.isArray(article.reviews)) {
+                article.reviews.forEach(review => {
+                    middleScore += review.score;
+                    counterI += 1;
+                });
+            }
+            
             const dataText = data.toString().replace(/{name}/g, article.name)
             .replace(/{content}/g, article.content)
-            .replace(/{reviews_count}/g, article.reviews.length)
+            .replace(/{reviews_count}/g, counterI)
             .replace(/{score}/g, Math.ceil(middleScore / counterI))
             .replace(/{_id}/g, article._id);
 

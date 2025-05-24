@@ -75,7 +75,8 @@ async function setDataFromRequest(head, author, content) {
         const today = new Date();
         var article = {
             name: head,
-            author: author,
+            author: "Пользователь",
+            reviews: [],
             date_public: today,
             content: content
         }

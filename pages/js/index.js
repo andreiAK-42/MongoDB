@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let textContent = '';
             if (nameCell) {
-                textContent += nameCell.textContent.toLowerCase() + ' ';
+                textContent += nameCell.textContent.toLowerCase();
             }
             if (authorCell) {
                 textContent += authorCell.textContent.toLowerCase();
@@ -201,14 +201,20 @@ function dateSearch() {
 }
 
 function getMiddleScore(item) {
-    var middleScore = 0;
-    var counterI = 0;
-    item.reviews.forEach(review => {
-        middleScore += review.score;
-        counterI += 1;
-    });
 
-    return Math.ceil(middleScore / counterI);
+    if (item) {
+        var middleScore = 0;
+        var counterI = 0;
+        item.reviews.forEach(review => {
+            middleScore += review.score;
+            counterI += 1;
+        });
+
+        return Math.ceil(middleScore / counterI);
+    }
+    else {
+        return 0;
+    }
 }
 
 function renderTopArticles(data) {
@@ -227,14 +233,16 @@ function renderTopArticles(data) {
         });
 
         data.forEach(item => {
-            const htmlContent = `
-            <div id="${item._id}" class="top_article">
-                <p>${item.name}</p>
-                <p>${item.reviews.length}</p>
-                <p>${getMiddleScore(item)}</p>
-            </div>`;
+            if (item) {
+                const htmlContent = `
+                <div id="${item._id}" class="top_article">
+                    <p>${item.name}</p>
+                    <p>${item.reviews.length}</p>
+                    <p>${getMiddleScore(item)}</p>
+                </div>`;
 
-            targetClass.innerHTML += htmlContent;
+                targetClass.innerHTML += htmlContent;
+            }
 
         });
     }
